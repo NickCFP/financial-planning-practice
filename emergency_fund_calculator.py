@@ -36,42 +36,42 @@ monthly_expenses = float(input("Enter your monthly expenses: "))
 
 # 2. Gather job security.
 job_security = float(input("Rank your job security using the following scale "
-"(0 = retired, 1 = dual-income, 2 = single-income): "))
+"(0 = retired, 0.5 = dual-income, 1 = single-income): "))
 
 # 3. Gather income stability.
 income_stability = float(input("Rank your income stability using the following scale "
-"(0 = very stable, 1 = somewhat stable, 2 = not stable): "))
+"(0 = very stable, 0.5 = somewhat stable, 1 = not stable): "))
 
 # 4. Gather health status.
 health_status = float(input("Rank your health status using the following scale "
-"(0 = very healthy, 1 = somewhat healthy, 2 = not healthy): "))
+"(0 = very healthy, 0.5 = somewhat healthy, 1 = not healthy): "))
 
 # 5. Gather insurance coverage.
 insurance_coverage = float(input("Rank your insurance coverage using the following scale "
-"(0 = very adequate, 1 = somewhat adequate, 2 = not adequate): "))
+"(0 = very adequate, 0.5 = somewhat adequate, 1 = not adequate): "))
 
 # 6. Gather ability to reduce expenses.
 ability_to_reduce_expenses = float(input("Rank your ability to reduce expenses using the following scale "
-"(0 = very flexible, 1 = somewhat flexible, 2 = not flexible): "))
+"(0 = very flexible, 0.5 = somewhat flexible, 1 = not flexible): "))
 
 # 7. Gather dependent details.
 has_dependents = float(input("Tell us if you have dependents using the following scale "
-"(0 = no dependents, 2 = yes dependents): "))
+"(0 = no dependents, 1 = yes dependents): "))
 
 # 8. Gather primary residence details.
 owns_primary_residence = float(input("Tell us if you own or rent your primary residence using the following scale "
-"(0 = rent, 2 = own): "))
+"(0 = rent, 1 = own): "))
 
 # 9. Gather support network details.
 support_network = float(input("Rank your support network using the following scale "
-"(0 = very strong, 1 = somewhat strong, 2 = not strong): "))
+"(0 = very strong, 0.5 = somewhat strong, 1 = not strong): "))
 
 # 10. Gather credit access details.
 low_cost_credit_access = float(input("Rank your ability to access low-cost credit using the following scale "
-"(0 = very strong, 1 = somewhat strong, 2 = not strong): "))
+"(0 = very strong, 0.5 = somewhat strong, 1 = not strong): "))
 
 ##### Run calculations. #####
-recommended_months_of_expenses = 3 + sum([
+risk_score = sum([
     job_security,
     income_stability,
     health_status,
@@ -82,6 +82,9 @@ recommended_months_of_expenses = 3 + sum([
     support_network,
     low_cost_credit_access
 ])
+
+recommended_months_of_expenses = 3 + risk_score
+
 recommended_emergency_fund = round(recommended_months_of_expenses * monthly_expenses)
 
 ##### Share output. #####
