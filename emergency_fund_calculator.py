@@ -24,7 +24,7 @@ emergency fund size. Afterwards, a user could layer on their subjective feelings
 definition, it is impossible to predict when an emergency will occur or how much it will 
 cost. Thus, a scientific way of determining the precise size an emergency fund should be is 
 not possible.
-- Each variable can have a numerical value of between 0-2. Each variable is equally-weighted.
+- Each variable can have a numerical value of between 0-1. Each variable is equally-weighted.
 When summed together, the value results in a the user's total risk score. The risk score is
 then used to place the user on the spectrum of a 3-month emergency fund to a 12-month 
 emergency fund, using a simple linear mapping.
